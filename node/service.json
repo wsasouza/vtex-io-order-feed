@@ -6,13 +6,15 @@
   "maxReplicas": 4,
   "workers": 1,
   "events": {
-    "allStates": {
-      "sender": "vtex.orders-broadcast",
-      "topics": ["order-status-updated"]
-    },
     "someStates": {
       "sender": "vtex.orders-broadcast",
-      "topics": ["cancel", "order-created"]
+      "topics": ["cancel","payment-approved"]
+    }
+  },
+  "routes": {
+    "sendingPoints": {
+      "path": "/_v/sending_points",
+      "public": true
     }
   }
 }
